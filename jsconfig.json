@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "checkJs": false,
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "types": ["node"],
+        "typeRoots": ["./node_modules/@types"]
+    },
+    "include": ["./**/*.js"],
+    "exclude": ["node_modules", "dist"]
+}
+                
