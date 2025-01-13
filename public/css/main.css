@@ -61,3 +61,34 @@ h1, h2, h3, h4, h5, h6 {
     --bs-btn-disabled-border-color: var(--bs-primary-rgb);
     --bs-gradient: none;
 }
+
+.pagination {
+    --bs-pagination-color: var(--bs-primary-rgb);
+    --bs-pagination-active-bg: var(--bs-primary-rgb);
+    --bs-pagination-active-border-color: var(--bs-primary-rgb);
+}
+
+/* Home */
+@media (min-width: 1200px) {
+    .home {
+        background: 
+            url('../img/fox.svg') left bottom no-repeat,
+            url('../img/fox.svg') right bottom no-repeat,
+            url('../img/fox.svg') left top no-repeat,
+            var(--background-color);
+    }
+}
+
+.home-title::before {
+    content: url('../img/');   
+    position: absolute;
+    left: -50px;
+    top: -30px;
+}
+
+.home-title::before {
+    content: url('../img/');   
+    position: absolute;
+    right: -50px;
+    bottom: -30px;
+}
