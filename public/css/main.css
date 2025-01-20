@@ -72,23 +72,25 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 1200px) {
     .home {
         background: 
-            url('../img/fox.svg') left bottom no-repeat,
-            url('../img/fox.svg') right bottom no-repeat,
-            url('../img/fox.svg') left top no-repeat,
-            var(--background-color);
+        url('../img/human-1.svg') left bottom no-repeat,
+        url('../img/human-2.svg') right bottom no-repeat,
+        url('../img/noise-bg.svg') left top repeat,
+        var(--background-color);
     }
 }
 
 .home-title::before {
-    content: url('../img/');   
+    content: url('../img/stars.svg');   
     position: absolute;
     left: -50px;
-    top: -30px;
+    top: -90px;
+    z-index: -1;
 }
 
 .home-title::before {
-    content: url('../img/');   
+    content: url('../img/stars.svg');  
     position: absolute;
     right: -50px;
-    bottom: -30px;
+    bottom: -90px;
+    z-index: -1;
 }

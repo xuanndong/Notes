@@ -3,6 +3,7 @@ import "dotenv/config";
 
 import express from "express";
 import expressLayouts from "express-ejs-layouts";
+import methodOverride from "method-override";
 
 import Index from "./server/routes/index.js";
 import Dashboard from "./server/routes/dashboard.js";
@@ -31,10 +32,11 @@ app.use(
 );
 
 app.use(passport.initialize());
-//app.use(passport.session());
+app.use(passport.session());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(methodOverride("_method"));
 
 // Connect to Dadabase
 db.connectDB();

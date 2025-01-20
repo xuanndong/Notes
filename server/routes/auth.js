@@ -47,7 +47,7 @@ router.get(
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    failureRedirect: "/",
+    failureRedirect: "/login-failure",
     successRedirect: "/dashboard",
   })
 );
@@ -75,10 +75,13 @@ passport.serializeUser(function (user, done) {
 });
 
 // Retrieve user data from session
-passport.deserializeUser(function (id, done) {
-  User.findById(id, function (err, user) {
-    done(err, user);
-  });
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await User.findById(id);
+    done(null, user);
+  } catch (err) {
+    done(err, null);
+  }
 });
 
 export default router;
